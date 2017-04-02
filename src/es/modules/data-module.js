@@ -1,5 +1,6 @@
 import * as firebase from 'firebase';
 import 'firebase/database';
+import 'firebase/storage';
 
 /**
  * @class DataModule
@@ -16,6 +17,7 @@ export default class DataModule {
 	constructor () {
 		this.main = document.querySelector('main');
 		firebase.initializeApp(DataModule.initData());
+		this.storageRef = firebase.storage().ref();
 		firebase.database().ref().once('value').then((snapshot) => {
 			debugger;
 			this.buildPage(snapshot.val());
@@ -42,6 +44,9 @@ export default class DataModule {
 	buildPage (data) {
 		this.main.appendChild(DataModule.buildHeading(data.name));
 		this.main.appendChild(DataModule.buildDescription(data.description));
+		this.storageRef.child('images/13321888_1254728641211420_4263278717135263913_n.jpg').getDownloadURL().then((url) => {
+			this.main.insertBefore(DataModule.buildImage(url), this.main.firstChild);
+		});
 	}
 
 	static buildHeading (heading) {
@@ -51,8 +56,14 @@ export default class DataModule {
 	}
 
 	static buildDescription (description) {
-		let headingElement = document.createElement("p");
-		headingElement.innerHTML = description;
-		return headingElement;
+		let descriptionElement = document.createElement("p");
+		descriptionElement.innerHTML = description;
+		return descriptionElement;
+	}
+
+	static buildImage (url) {
+		let imageElement = document.createElement("figure");
+		imageElement.innerHTML = `<img src="${url}" />`;
+		return imageElement;
 	}
 }
