@@ -1,0 +1,57 @@
+body {
+	background: linear-gradient(to bottom right, #095e51, #24800e);
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+	padding-top: 80px;
+	box-sizing: border-box;
+
+	#particles-js {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 1;
+	}
+
+	main {
+		max-width: 100%;
+		width: 700px;
+		margin: auto;
+		padding: 0 15px;
+		z-index: 2;
+		position: relative;
+		box-sizing: border-box;
+
+		h1 {
+			color: white;
+			font-size: 30px;
+			margin: 0;
+			text-align: center;
+			font-family: sans-serif;
+			animation-name: fadeIn;
+			animation-duration: 0.4s;
+			animation-fill-mode: forwards;
+		}
+
+		p {
+			color: white;
+			font-size: 18px;
+			margin: 0;
+			text-align: center;
+			font-family: sans-serif;
+			animation-name: fadeIn;
+			animation-duration: 0.4s;
+			animation-fill-mode: forwards;
+			padding: 20px 0;
+		}
+	}
+}
+
+@keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
