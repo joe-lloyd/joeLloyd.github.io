@@ -1,5 +1,4 @@
 import * as path from "path";
-import webpack from "webpack";
 
 module.exports = {
 	entry: {
@@ -22,7 +21,5 @@ module.exports = {
 		]
 	},
 	devtool: 'source-map',
-	plugins: [
-
-	]
+	plugins: []
 };
