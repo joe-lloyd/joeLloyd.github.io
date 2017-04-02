@@ -1,7 +1,9 @@
 export default class {
 
 	constructor () {
-		firebase.initializeApp(this.initData());
+		this.data = firebase.initializeApp(this.initData());
+
+		console.log(this.data.description);
 	}
 
 	initData () {
