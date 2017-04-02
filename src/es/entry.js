@@ -1,4 +1,5 @@
 import CanvasModule from "./modules/canvas-module";
+import DataModule from "./modules/data-module";
 
 /**
  * @description
@@ -7,4 +8,5 @@ import CanvasModule from "./modules/canvas-module";
  */
 document.addEventListener("DOMContentLoaded", () => {
 	new CanvasModule();
+	new DataModule();
 });

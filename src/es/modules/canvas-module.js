@@ -1,12 +1,26 @@
-// import * as particlesJS from 'particles.js';
-// const particlesJS = require('particles.js');
-
+/**
+ * @class CanvasModule
+ *
+ * @description
+ * This inits the particle js library. particle js has to
+ * be loaded global outside teh bundling process.
+ *
+ */
 export default class CanvasModule {
 
+	/**
+	 * @constructor
+	 *
+	 */
 	constructor () {
 		particlesJS.load('particles-js', CanvasModule.initParticleJs());
 	}
 
+	/**
+	 * @description
+	 * Gets the json data for a particle object. Generated from the particle js site
+	 *
+	 */
 	static initParticleJs () {
 		return particlesJS(
 			"particles-js", {
