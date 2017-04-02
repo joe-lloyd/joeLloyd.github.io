@@ -1,10 +1,9 @@
 import * as path from "path";
 import webpack from "webpack";
-import Bump from "bump-webpack-plugin";
 
 module.exports = {
 	entry: {
-		app: "./es/entry.js"
+		app: "./src/es/entry.js"
 	},
 	output: {
 		path: "./dist",
@@ -24,7 +23,6 @@ module.exports = {
 	},
 	devtool: 'source-map',
 	plugins: [
-		new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js"),
-		new Bump('package.json')
+
 	]
 };
